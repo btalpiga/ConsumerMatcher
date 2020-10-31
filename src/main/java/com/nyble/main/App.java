@@ -1,12 +1,12 @@
 package com.nyble.main;
 
-import com.google.gson.Gson;
 import com.nyble.managers.ProducerManager;
 import com.nyble.match.Matcher;
 import com.nyble.match.SystemConsumerEntity;
 import com.nyble.models.consumer.Consumer;
 import com.nyble.models.consumer.ConsumerFlag;
 import com.nyble.topics.Names;
+import com.nyble.topics.TopicObjectsFactory;
 import com.nyble.topics.consumer.ConsumerValue;
 import com.nyble.topics.consumerAttributes.ConsumerAttributesKey;
 import com.nyble.topics.consumerAttributes.ConsumerAttributesValue;
@@ -91,8 +91,7 @@ public class App {
     }
 
     public static void processRecord(ConsumerRecord<String, String> record) {
-        Gson gson = new Gson();
-        ConsumerValue value = gson.fromJson(record.value(), ConsumerValue.class);
+        ConsumerValue value = (ConsumerValue) TopicObjectsFactory.fromJson(record.value(), ConsumerValue.class);
         String changedProperty = value.getChangedProperty().getPropertyName();
         if("fullName".equals(changedProperty) || "phone".equals(changedProperty) ||
                 "email".equals(changedProperty) || "location".equals(changedProperty) ||
@@ -122,7 +121,7 @@ public class App {
                                 sce.consumerId+"",
                                 "entityId", sce.entityId+"", currentTimestamp, currentTimestamp);
                         ProducerRecord<String, String> consumerAttributeMessage = new ProducerRecord<>(Names.CONSUMER_ATTRIBUTES,
-                                gson.toJson(attributeKey), gson.toJson(attributeValue));
+                                attributeKey.toJson(), attributeValue.toJson());
                         producerConsumerAttributeTopic.send(consumerAttributeMessage);
                     }
                 }
