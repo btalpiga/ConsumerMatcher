@@ -21,10 +21,13 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
+@SpringBootApplication(scanBasePackages = {"com.nyble.rest"})
 public class App {
 
     final static String KAFKA_CLUSTER_BOOTSTRAP_SERVERS = "10.100.1.17:9093";
@@ -61,6 +64,7 @@ public class App {
     }
 
     public static void main(String[] args) {
+        SpringApplication.run(App.class, args);
 
         final int noOfConsumers = 4;
         for(int i=0;i<noOfConsumers; i++){
