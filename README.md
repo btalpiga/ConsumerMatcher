@@ -2,7 +2,7 @@
 Kafka project for matching multiple consumer accounts under the same consumer entity
 
 ## Embedded WebServer
-Running port is 7005
+Running port is 7006
 
 ## Redeploy
 
