@@ -1,5 +1,6 @@
 package com.nyble.match;
 
+import com.nyble.main.App;
 import com.nyble.match.rules.*;
 import com.nyble.util.DBUtil;
 import org.slf4j.Logger;
@@ -14,12 +15,12 @@ import java.util.*;
 public class Matcher {
 
     private static final Logger logger = LoggerFactory.getLogger(Matcher.class);
-    private static RulesChain chainOfRules;
+    private static final RulesChain chainOfRules;
 
     static  {
         synchronized(Matcher.class){
             chainOfRules = new RulesChain();
-            chainOfRules.addRule(new RemoveUsersWithNoName());
+            chainOfRules.addRule(new RemoveUsersWithNoNameRule());
             chainOfRules.addRule(new RemoveSmsUsersRule());
             chainOfRules.addRule(new PhoneAndNameRule());
             chainOfRules.addRule(new PhoneAndLocationRule());
@@ -27,8 +28,8 @@ public class Matcher {
         }
     }
 
-    public static List<SystemConsumerEntity> getConsumersEntityId(int consumerId, int systemId, Map<String, Object> extraInfoMap)
-            throws SQLException, IllegalAccessException {
+    public List<SystemConsumerEntity> getConsumersEntityId(int consumerId, int systemId, Map<String, Object> extraInfoMap)
+            throws SQLException {
         Set<SystemConsumerEntity> matchedConsumers = chainOfRules.process(systemId, consumerId, extraInfoMap);
         if(matchedConsumers.isEmpty()) {
             return Collections.singletonList(new SystemConsumerEntity(systemId, consumerId, getNewEntityId(), true));
@@ -46,9 +47,8 @@ public class Matcher {
         }
     }
 
-    public static void unifyEntityId(Set<SystemConsumerEntity> matchedConsumers) throws IllegalAccessException, SQLException {
-//        int uniqueEntityId = -1;
-        //calculate frequencies
+    public void unifyEntityId(Set<SystemConsumerEntity> matchedConsumers) throws SQLException {
+
         Map<Integer, Integer> freqMap = new HashMap<>();
         for(SystemConsumerEntity sce : matchedConsumers){
             if(sce.entityId == -1){ continue;}
@@ -59,35 +59,23 @@ public class Matcher {
             }
         }
 
-        int maxEntityId = -1;
-        int maxEntityIdFreq = 0;
-        for(Map.Entry<Integer, Integer> e : freqMap.entrySet()){
-            if(e.getValue() > maxEntityIdFreq){
-                maxEntityIdFreq = e.getValue();
-                maxEntityId = e.getKey();
-            }
-        }
-
-        if(maxEntityId != -1){
-            for(SystemConsumerEntity sce : matchedConsumers){
-                if(sce.entityId != maxEntityId){
-                    sce.entityId = maxEntityId;
-                    sce.needToUpdate = true;
-                }
-            }
+        List<Map.Entry<Integer, Integer>> orderedFreq = new ArrayList<>(freqMap.entrySet());
+        orderedFreq.sort(Comparator.comparingInt(Map.Entry::getValue));
+        int electedEntityId;
+        if(orderedFreq.size() == 0){
+            electedEntityId = getNewEntityId();
         }else{
-            if(matchedConsumers.isEmpty()){
-                throw new IllegalAccessException("Check point 1");
-            }
-            maxEntityId = getNewEntityId();
-            for(SystemConsumerEntity sce : matchedConsumers){
-                sce.entityId = maxEntityId;
+            electedEntityId = orderedFreq.get(orderedFreq.size()-1).getKey();
+        }
+        for(SystemConsumerEntity sce : matchedConsumers){
+            if(sce.entityId != electedEntityId){
+                sce.entityId = electedEntityId;
                 sce.needToUpdate = true;
             }
         }
     }
 
-    public static int getNewEntityId() throws SQLException {
+    public int getNewEntityId() throws SQLException {
         try(Connection conn = DBUtil.getInstance().getConnection();
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("SELECT nextval('consumer_entity_seq')")){
@@ -96,17 +84,19 @@ public class Matcher {
         }
     }
 
-    public static boolean isConsumerMovingToNewEntity(String systemId, String consumerId, String entityId)
+    public boolean isConsumerMovingToNewEntity(String systemId, String consumerId, String entityId)
             throws SQLException {
 
-        final String query = "SELECT * from consumers_unique_entity_criterias " +
-                "where entity_id = :entityId and (system_id<>:systemId or consumer_id<>:consumerId) limit 1";
+        final String query = String.format(
+                "SELECT * from %s " +
+                "where entity_id = %s and (system_id<>%s or consumer_id<>%s) limit 1",
+                App.CONSUMER_UNIQUE_CRITERIA_TABLE, entityId, systemId, consumerId
+        );
 
         logger.debug("call isConsumerMovingToNewEntity {}", systemId+"#"+consumerId);
         try(Connection conn = DBUtil.getInstance().getConnection();
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query.replace(":entityId", entityId)
-                .replace(":systemId", systemId).replace(":consumerId", consumerId))){
+            ResultSet rs = st.executeQuery(query)){
             return rs.next();
         }finally {
             logger.debug("end call isConsumerMovingToNewEntity {}", systemId+"#"+consumerId);

@@ -19,12 +19,4 @@ public abstract class MatchingRule {
         return nextRule;
     }
 
-    protected boolean isNumerical(String numRep){
-        for(char c: numRep.toCharArray()){
-            if(!Character.isDigit(c)) {
-                return false;
-            }
-        }
-        return true;
-    }
 }

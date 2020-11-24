@@ -14,21 +14,21 @@ import java.util.Set;
 
 public class UnifyGroupsTester extends TestCase {
 
-    public void test_unify() throws SQLException, IllegalAccessException {
-        EmailRule emailRule = new EmailRule();
-        String systemId = "1";
-        String consumerId = "12018608";
-        Set<SystemConsumerEntity> rez = new HashSet<>();
-        Map<String, Object> extraInfo = new HashMap<>();
-
-        Consumer consumer = new Consumer();
-        consumer.setProperty("email", new CAttribute("65eb5a493c2ed9b133c0e438ad80ae8b0ba4136ddf60251bf9d103884f0b8d0c", ""));
-        ConsumerValue cv = new ConsumerValue(consumer, null);
-        extraInfo.put("consumer", cv);
-        emailRule.match(consumerId, systemId, rez, extraInfo);
-
-        Matcher.unifyEntityId(rez);
-
-        assertEquals((int) rez.stream().filter(ce -> ce.needToUpdate).count(), 1);
-    }
+//    public void test_unify() throws SQLException, IllegalAccessException {
+//        EmailRule emailRule = new EmailRule();
+//        String systemId = "1";
+//        String consumerId = "12018608";
+//        Set<SystemConsumerEntity> rez = new HashSet<>();
+//        Map<String, Object> extraInfo = new HashMap<>();
+//
+//        Consumer consumer = new Consumer();
+//        consumer.setProperty("email", new CAttribute("65eb5a493c2ed9b133c0e438ad80ae8b0ba4136ddf60251bf9d103884f0b8d0c", ""));
+//        ConsumerValue cv = new ConsumerValue(consumer, null);
+//        extraInfo.put("consumer", cv);
+//        emailRule.match(consumerId, systemId, rez, extraInfo);
+//
+//        Matcher.unifyEntityId(rez);
+//
+//        assertEquals((int) rez.stream().filter(ce -> ce.needToUpdate).count(), 1);
+//    }
 }
