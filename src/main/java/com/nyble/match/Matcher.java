@@ -24,6 +24,7 @@ public class Matcher {
             chainOfRules.addRule(new RemoveSmsUsersRule());
             chainOfRules.addRule(new PhoneAndNameRule());
             chainOfRules.addRule(new PhoneAndLocationRule());
+            chainOfRules.addRule(new RemoveBlackListedEmailsRule());
             chainOfRules.addRule(new EmailRule());
         }
     }

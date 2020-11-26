@@ -30,7 +30,7 @@ ps -ef | grep "[L]oadConsumerUniqueAttributes" | grep -v grep | awk '{print $2}'
 Remove unique entity attributes from consumers table:
 ```sql
 update consumers 
-set payload = payload - 'fullName' - 'location' - 'phone' - 'email' - 'entityId';
+set payload = payload - 'fullName' - 'location' - 'phone' - 'email' - 'birthDate' -'entityId';
 ```
 
 Empty unique entity tables
