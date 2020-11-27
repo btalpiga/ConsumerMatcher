@@ -35,7 +35,7 @@ public class PhoneAndLocationRule extends MatchingRule {
 
     public boolean getSameConsumers(Set<SystemConsumerEntity> rez, String phoneValue, String locationValue){
         final String query = String.format(
-            "select system_id, consumer_id, case when entity_id is null then -1 else entity_id end as entity_id \n" +
+            "select system_id, consumer_id, entity_id \n" +
             "from %s where phone = '%s' and location = '%s'",
             App.CONSUMER_UNIQUE_CRITERIA_TABLE, phoneValue, locationValue
         );
@@ -45,7 +45,7 @@ public class PhoneAndLocationRule extends MatchingRule {
         ){
             while(rs.next()){
                 SystemConsumerEntity sce = new SystemConsumerEntity(rs.getInt("system_id"), rs.getInt("consumer_id"),
-                        rs.getInt("entity_id"));
+                        rs.getString("entity_id"));
                 rez.add(sce);
             }
             return true;

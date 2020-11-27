@@ -6,16 +6,16 @@ public class SystemConsumerEntity {
 
     public int systemId;
     public int consumerId;
-    public int entityId;
+    public String entityId;
     public boolean needToUpdate;
 
-    public SystemConsumerEntity(int systemId, int consumerId, int entityId) {
+    public SystemConsumerEntity(int systemId, int consumerId, String entityId) {
         this.systemId = systemId;
         this.consumerId = consumerId;
         this.entityId = entityId;
     }
 
-    public SystemConsumerEntity(int systemId, int consumerId, int newEntityId, boolean b) {
+    public SystemConsumerEntity(int systemId, int consumerId, String newEntityId, boolean b) {
         this(systemId, consumerId, newEntityId);
         needToUpdate = b;
     }
@@ -27,7 +27,7 @@ public class SystemConsumerEntity {
         SystemConsumerEntity that = (SystemConsumerEntity) o;
         return systemId == that.systemId &&
                 consumerId == that.consumerId &&
-                entityId == that.entityId;
+                Objects.equals(entityId ,that.entityId);
     }
 
     @Override

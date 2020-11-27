@@ -34,7 +34,7 @@ public class EmailRule extends MatchingRule{
 
     public boolean getSameConsumers(Set<SystemConsumerEntity> rez, String emailValue){
         final String query = String.format(
-                "select system_id, consumer_id, case when entity_id is null then -1 else entity_id end as entity_id \n" +
+                "select system_id, consumer_id, entity_id \n" +
                 "from %s where email = '%s'", App.CONSUMER_UNIQUE_CRITERIA_TABLE, emailValue);
 
         try(Connection conn = DBUtil.getInstance().getConnection();
@@ -43,7 +43,7 @@ public class EmailRule extends MatchingRule{
         ){
             while(rs.next()){
                 SystemConsumerEntity sce = new SystemConsumerEntity(rs.getInt("system_id"), rs.getInt("consumer_id"),
-                        rs.getInt("entity_id"));
+                        rs.getString("entity_id"));
                 rez.add(sce);
             }
             return true;
