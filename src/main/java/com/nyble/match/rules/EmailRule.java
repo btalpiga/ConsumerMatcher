@@ -34,8 +34,9 @@ public class EmailRule extends MatchingRule{
 
     public boolean getSameConsumers(Set<SystemConsumerEntity> rez, String emailValue){
         final String query = String.format(
-                "select system_id, consumer_id, entity_id \n" +
-                "from %s where email = '%s'", App.CONSUMER_UNIQUE_CRITERIA_TABLE, emailValue);
+                "select cuec.system_id, cuec.consumer_id, entity_id \n" +
+                "from %s cuec join consumers_flags cf using(system_id, consumer_id) \n" +
+                "where email = '%s' and cf.is_email_valid", App.CONSUMER_UNIQUE_CRITERIA_TABLE, emailValue);
 
         try(Connection conn = DBUtil.getInstance().getConnection();
             Statement st = conn.createStatement();

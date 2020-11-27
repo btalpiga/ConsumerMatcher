@@ -35,8 +35,9 @@ public class PhoneAndNameRule extends MatchingRule {
 
     public boolean getSameConsumers(Set<SystemConsumerEntity> rez, String phoneValue, String fullNameValue){
         final String query = String.format(
-                "select system_id, consumer_id, entity_id \n" +
-                "from %s where phone = '%s' and full_name = '%s'",
+                "select cuec.system_id, cuec.consumer_id, cuec.entity_id \n" +
+                "from %s cuec join consumers_flags cf using(system_id, consumer_id) \n" +
+                "where phone = '%s' and full_name = '%s' and cf.is_phone_valid",
                 App.CONSUMER_UNIQUE_CRITERIA_TABLE, phoneValue, fullNameValue);
         try(Connection conn = DBUtil.getInstance().getConnection("datawarehouse");
             Statement st = conn.createStatement();
