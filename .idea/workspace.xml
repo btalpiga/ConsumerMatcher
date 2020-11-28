@@ -3,11 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="58baadcf-aee4-4c1b-99c3-377b1d9a2f97" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/Matcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nyble/match/Matcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/SystemConsumerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nyble/match/SystemConsumerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/EmailRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/EmailRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/PhoneAndLocationRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/PhoneAndLocationRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/PhoneAndNameRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/PhoneAndNameRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/RemoveBlackListedEmailsRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/RemoveBlackListedEmailsRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MatchingTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MatchingTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestProcessRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestProcessRecord.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +65,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MatchingTester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ConsumerMatcher" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MatchingTester" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MatchingTester.test_matchCase1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ConsumerMatcher" />
       <option name="PACKAGE_NAME" value="" />
@@ -83,21 +94,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestProcessRecord.test_entityIdRemainsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MatchingTester.test_matchCase3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ConsumerMatcher" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestProcessRecord" />
-      <option name="METHOD_NAME" value="test_entityIdRemainsNull" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestProcessRecord.test_processRecordPhoneValidChange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ConsumerMatcher" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestProcessRecord" />
-      <option name="METHOD_NAME" value="test_processRecordPhoneValidChange" />
+      <option name="MAIN_CLASS_NAME" value="MatchingTester" />
+      <option name="METHOD_NAME" value="test_matchCase3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -131,19 +132,19 @@
     </configuration>
     <list>
       <item itemvalue="Maven.package" />
-      <item itemvalue="JUnit.TestProcessRecord.test_processRecordPhoneValidChange" />
-      <item itemvalue="JUnit.TestProcessRecord.test_entityIdRemainsNull" />
       <item itemvalue="JUnit.MatchingTester.test_matchCase1" />
       <item itemvalue="JUnit.MatchingTester.test_matchCase2" />
       <item itemvalue="Application.App" />
+      <item itemvalue="JUnit.MatchingTester.test_matchCase3" />
+      <item itemvalue="JUnit.MatchingTester" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MatchingTester" />
+        <item itemvalue="JUnit.MatchingTester.test_matchCase3" />
         <item itemvalue="Application.App" />
         <item itemvalue="JUnit.MatchingTester.test_matchCase2" />
         <item itemvalue="JUnit.MatchingTester.test_matchCase1" />
-        <item itemvalue="JUnit.TestProcessRecord.test_entityIdRemainsNull" />
-        <item itemvalue="JUnit.TestProcessRecord.test_processRecordPhoneValidChange" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +199,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606409552162</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="modificare entityId din secventa in UUID">
+      <created>1606468432414</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606468432414</updated>
+    </task>
+    <task id="LOCAL-00006" summary="-">
+      <created>1606470723727</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606470723727</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -206,6 +221,7 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Adaugare server web" />
     <MESSAGE value="Documentatie" />
+    <MESSAGE value="modificare entityId din secventa in UUID" />
     <MESSAGE value="-" />
     <option name="LAST_COMMIT_MESSAGE" value="-" />
   </component>
@@ -234,81 +250,81 @@
     </state>
     <state x="443" y="178" width="556" height="582" key="#xdebugger.evaluate/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1598024406389" />
     <state x="1062" y="175" key="#xdebugger.evaluate/67.27.3773.1053@67.27.3773.1053" timestamp="1602060703693" />
-    <state x="919" y="131" width="761" height="805" key="CommitChangelistDialog2" timestamp="1606409552109">
+    <state x="919" y="131" width="761" height="805" key="CommitChangelistDialog2" timestamp="1606470723670">
       <screen x="0" y="30" width="1680" height="1050" />
     </state>
-    <state x="919" y="131" width="761" height="805" key="CommitChangelistDialog2/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606409552109" />
+    <state x="919" y="131" width="761" height="805" key="CommitChangelistDialog2/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606470723670" />
     <state x="2169" y="128" width="1019" height="807" key="CommitChangelistDialog2/67.27.3773.1053@67.27.3773.1053" timestamp="1604321977096" />
-    <state width="622" height="466" key="DebuggerActiveHint" timestamp="1606402882871">
+    <state width="622" height="466" key="DebuggerActiveHint" timestamp="1606472400041">
       <screen x="0" y="30" width="1680" height="1050" />
     </state>
-    <state width="622" height="466" key="DebuggerActiveHint/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606402882871" />
+    <state width="622" height="466" key="DebuggerActiveHint/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606472400041" />
     <state width="711" height="480" key="DebuggerActiveHint/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606073244336" />
     <state width="1397" height="468" key="DebuggerActiveHint/67.27.3773.1053@67.27.3773.1053" timestamp="1604158105375" />
     <state x="770" y="305" width="424" height="567" key="FileChooserDialogImpl" timestamp="1604154930712">
       <screen x="67" y="27" width="3773" height="1053" />
     </state>
     <state x="770" y="305" width="424" height="567" key="FileChooserDialogImpl/67.27.3773.1053@67.27.3773.1053" timestamp="1604154930712" />
-    <state width="1698" height="237" key="GridCell.Tab.0.bottom" timestamp="1606468407175">
+    <state width="1698" height="237" key="GridCell.Tab.0.bottom" timestamp="1606584038257">
       <screen x="0" y="30" width="1680" height="1050" />
     </state>
     <state width="1406" height="269" key="GridCell.Tab.0.bottom/0.27.3600.1053@0.27.3600.1053" timestamp="1602421736181" />
-    <state width="1698" height="237" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606468407175" />
+    <state width="1698" height="237" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606584038257" />
     <state width="1807" height="337" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606082807313" />
     <state width="1406" height="266" key="GridCell.Tab.0.bottom/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603708" />
-    <state width="1698" height="237" key="GridCell.Tab.0.center" timestamp="1606468407175">
+    <state width="1698" height="237" key="GridCell.Tab.0.center" timestamp="1606584038256">
       <screen x="0" y="30" width="1680" height="1050" />
     </state>
     <state width="1406" height="269" key="GridCell.Tab.0.center/0.27.3600.1053@0.27.3600.1053" timestamp="1602421736180" />
-    <state width="1698" height="237" key="GridCell.Tab.0.center/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606468407175" />
+    <state width="1698" height="237" key="GridCell.Tab.0.center/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606584038256" />
     <state width="1807" height="337" key="GridCell.Tab.0.center/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606082807313" />
     <state width="1406" height="266" key="GridCell.Tab.0.center/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603707" />
-    <state width="1698" height="237" key="GridCell.Tab.0.left" timestamp="1606468407175">
+    <state width="1698" height="237" key="GridCell.Tab.0.left" timestamp="1606584038256">
       <screen x="0" y="30" width="1680" height="1050" />
     </state>
     <state width="1406" height="269" key="GridCell.Tab.0.left/0.27.3600.1053@0.27.3600.1053" timestamp="1602421736179" />
-    <state width="1698" height="237" key="GridCell.Tab.0.left/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606468407175" />
+    <state width="1698" height="237" key="GridCell.Tab.0.left/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606584038256" />
     <state width="1807" height="337" key="GridCell.Tab.0.left/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606082807313" />
     <state width="1406" height="266" key="GridCell.Tab.0.left/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603707" />
-    <state width="1698" height="237" key="GridCell.Tab.0.right" timestamp="1606468407175">
+    <state width="1698" height="237" key="GridCell.Tab.0.right" timestamp="1606584038256">
       <screen x="0" y="30" width="1680" height="1050" />
     </state>
     <state width="1406" height="269" key="GridCell.Tab.0.right/0.27.3600.1053@0.27.3600.1053" timestamp="1602421736180" />
-    <state width="1698" height="237" key="GridCell.Tab.0.right/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606468407175" />
+    <state width="1698" height="237" key="GridCell.Tab.0.right/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606584038256" />
     <state width="1807" height="337" key="GridCell.Tab.0.right/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606082807313" />
     <state width="1406" height="266" key="GridCell.Tab.0.right/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603708" />
-    <state width="1698" height="266" key="GridCell.Tab.1.bottom" timestamp="1606403153204">
+    <state width="1698" height="266" key="GridCell.Tab.1.bottom" timestamp="1606583465857">
       <screen x="0" y="30" width="1680" height="1050" />
     </state>
-    <state width="1698" height="266" key="GridCell.Tab.1.bottom/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606403153204" />
+    <state width="1698" height="266" key="GridCell.Tab.1.bottom/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606583465857" />
     <state width="1807" height="334" key="GridCell.Tab.1.bottom/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606074641436" />
     <state width="1406" height="266" key="GridCell.Tab.1.bottom/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603710" />
-    <state width="1698" height="266" key="GridCell.Tab.1.center" timestamp="1606403153204">
+    <state width="1698" height="266" key="GridCell.Tab.1.center" timestamp="1606583465857">
       <screen x="0" y="30" width="1680" height="1050" />
     </state>
-    <state width="1698" height="266" key="GridCell.Tab.1.center/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606403153204" />
+    <state width="1698" height="266" key="GridCell.Tab.1.center/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606583465857" />
     <state width="1807" height="334" key="GridCell.Tab.1.center/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606074641436" />
     <state width="1406" height="266" key="GridCell.Tab.1.center/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603709" />
-    <state width="1698" height="266" key="GridCell.Tab.1.left" timestamp="1606403153204">
+    <state width="1698" height="266" key="GridCell.Tab.1.left" timestamp="1606583465857">
       <screen x="0" y="30" width="1680" height="1050" />
     </state>
-    <state width="1698" height="266" key="GridCell.Tab.1.left/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606403153204" />
+    <state width="1698" height="266" key="GridCell.Tab.1.left/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606583465857" />
     <state width="1807" height="334" key="GridCell.Tab.1.left/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606074641436" />
     <state width="1406" height="266" key="GridCell.Tab.1.left/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603709" />
-    <state width="1698" height="266" key="GridCell.Tab.1.right" timestamp="1606403153204">
+    <state width="1698" height="266" key="GridCell.Tab.1.right" timestamp="1606583465857">
       <screen x="0" y="30" width="1680" height="1050" />
     </state>
-    <state width="1698" height="266" key="GridCell.Tab.1.right/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606403153204" />
+    <state width="1698" height="266" key="GridCell.Tab.1.right/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606583465857" />
     <state width="1807" height="334" key="GridCell.Tab.1.right/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606074641436" />
     <state width="1406" height="266" key="GridCell.Tab.1.right/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603709" />
     <state x="572" y="287" width="819" height="602" key="NewModule_or_Project.wizard" timestamp="1601885818318">
       <screen x="67" y="27" width="3773" height="1053" />
     </state>
     <state x="572" y="287" width="819" height="602" key="NewModule_or_Project.wizard/67.27.3773.1053@67.27.3773.1053" timestamp="1601885818318" />
-    <state x="985" y="269" width="516" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606409559730">
+    <state x="985" y="269" width="516" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606470735703">
       <screen x="0" y="30" width="1680" height="1050" />
     </state>
-    <state x="985" y="269" width="516" height="527" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606409559730" />
+    <state x="985" y="269" width="516" height="527" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606470735703" />
     <state x="2279" y="267" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.3773.1053@67.27.3773.1053" timestamp="1604321990915" />
     <state x="1635" y="387" key="com.intellij.ide.util.TipDialog" timestamp="1602068538342">
       <screen x="67" y="27" width="3773" height="1053" />

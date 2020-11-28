@@ -4,6 +4,7 @@ import com.nyble.main.App;
 import com.nyble.match.SystemConsumerEntity;
 import com.nyble.models.consumer.Consumer;
 import com.nyble.models.consumer.ConsumerFlag;
+import com.nyble.topics.Names;
 import com.nyble.topics.consumer.ConsumerValue;
 import com.nyble.util.DBUtil;
 import com.nyble.utils.StringConverter;
@@ -25,9 +26,14 @@ public class PhoneAndNameRule extends MatchingRule {
     public boolean match(String consumerId, String systemId, Set<SystemConsumerEntity> rez, Map<String, Object> extraInfoMap) {
         ConsumerValue consumervalue = (ConsumerValue) extraInfoMap.get("consumer");
         Consumer consumer = consumervalue.getConsumer();
+        int system = Integer.parseInt(consumer.getValue("systemId"));
+        if(system != Names.RMC_SYSTEM_ID && !consumer.isFlagSet(ConsumerFlag.SMS_CONFIRMED)){
+            logger.info("Consumer is from {} system and sms is not confirmed; continue to next rule", system);
+            return true;
+        }
         String phoneValue = new StringConverter(consumer.getValue("phone")).trim().nullIf("").get();
         String fullNameValue = consumer.getValue("fullName");
-        if(phoneValue == null || !consumer.isFlagSet(ConsumerFlag.IS_PHONE_VALID)){
+        if(phoneValue == null){
             return true;
         }
         return getSameConsumers(rez, phoneValue, fullNameValue);
@@ -37,7 +43,7 @@ public class PhoneAndNameRule extends MatchingRule {
         final String query = String.format(
                 "select cuec.system_id, cuec.consumer_id, cuec.entity_id \n" +
                 "from %s cuec join consumers_flags cf using(system_id, consumer_id) \n" +
-                "where phone = '%s' and full_name = '%s' and cf.is_phone_valid",
+                "where phone = '%s' and full_name = '%s' and cf.sms_confirmed",
                 App.CONSUMER_UNIQUE_CRITERIA_TABLE, phoneValue, fullNameValue);
         try(Connection conn = DBUtil.getInstance().getConnection("datawarehouse");
             Statement st = conn.createStatement();
