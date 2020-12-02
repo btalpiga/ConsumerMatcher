@@ -26,12 +26,11 @@ public class SystemConsumerEntity {
         if (!(o instanceof SystemConsumerEntity)) return false;
         SystemConsumerEntity that = (SystemConsumerEntity) o;
         return systemId == that.systemId &&
-                consumerId == that.consumerId &&
-                Objects.equals(entityId ,that.entityId);
+                consumerId == that.consumerId;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(systemId, consumerId, entityId);
+        return Objects.hash(systemId, consumerId);
     }
 }

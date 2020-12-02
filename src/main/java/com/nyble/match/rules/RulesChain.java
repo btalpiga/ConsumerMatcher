@@ -36,6 +36,9 @@ public class RulesChain {
             logger.debug("[END] Applying rule {} to consumer {}", currentRule.getClass(), systemId+"#"+consumerId);
             currentRule = currentRule.getNextRule();
         }
+
+        rez.add(new SystemConsumerEntity(systemId, consumerId, null));
+
         return rez;
     }
 }

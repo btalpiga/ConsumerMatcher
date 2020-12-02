@@ -10,6 +10,7 @@ import com.nyble.topics.consumer.ConsumerValue;
 import junit.framework.TestCase;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class MatchingTester extends TestCase {
 
@@ -37,11 +38,8 @@ public class MatchingTester extends TestCase {
         chainOfRules.addRule(new PhoneAndLocationRule());
         chainOfRules.addRule(new EmailRule());
 
-        Set<SystemConsumerEntity> rez = chainOfRules.process(10647466, 1, map);
-        assertFalse(rez.isEmpty());
-        System.out.println(rez);
-
-        assertEquals(1, rez.size());
+        Set<SystemConsumerEntity> rez = chainOfRules.process(  1, 11415230, map);
+        System.out.println(rez.stream().map(sce->sce.systemId+"#"+sce.consumerId+" = "+sce.entityId).collect(Collectors.joining("\n")));
     }
 
     public void test_matchCase2(){
@@ -68,11 +66,8 @@ public class MatchingTester extends TestCase {
         chainOfRules.addRule(new PhoneAndLocationRule());
         chainOfRules.addRule(new EmailRule());
 
-        Set<SystemConsumerEntity> rez = chainOfRules.process(11969015, 1, map);
-        assertFalse(rez.isEmpty());
-        System.out.println(rez);
-
-        assertEquals(2, rez.size());
+        Set<SystemConsumerEntity> rez = chainOfRules.process( 1, 11969015, map);
+        System.out.println(rez.stream().map(sce->sce.systemId+"#"+sce.consumerId+" = "+sce.entityId).collect(Collectors.joining("\n")));
     }
 
     public void test_matchCase3(){
@@ -101,8 +96,38 @@ public class MatchingTester extends TestCase {
         chainOfRules.addRule(new PhoneAndLocationRule());
         chainOfRules.addRule(new EmailRule());
 
-        Set<SystemConsumerEntity> rez = chainOfRules.process(consumerId, 1, map);
-        assertTrue(rez.isEmpty());
-        System.out.println(rez);
+        Set<SystemConsumerEntity> rez = chainOfRules.process( 1, consumerId, map);
+        System.out.println(rez.stream().map(sce->sce.systemId+"#"+sce.consumerId+" = "+sce.entityId).collect(Collectors.joining("\n")));
+    }
+
+    public void test_matchCase4(){
+        //
+        final int consumerId = 12112027;
+        String now = new Date().getTime()+"";
+        Consumer c = new Consumer();
+        c.setProperty("systemId", new CAttribute(Names.RMC_SYSTEM_ID+"", now));
+        c.setProperty("consumerId", new CAttribute(consumerId+"", now));
+        c.setProperty("fullName", new CAttribute("DORINAKELERMAN", now));
+        c.setProperty("phone", new CAttribute("fb6e590b082ecb94aae1bab90d7b85ce2ce894991eeeda3555150f4c77f02ffb", now));
+        c.setProperty("email", new CAttribute("", now));
+        c.setProperty("location", new CAttribute("b5caeacd26448962c802cf160825dbf21f615b3b40a0626a4ce1f95da5bb89ed", now));
+        c.setProperty("flags", new CAttribute("1117", now));
+
+        ChangedProperty cp = new ChangedProperty("fullName", "", "DORINAKELERMAN");
+        ConsumerValue cv = new ConsumerValue(c, cp);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("consumer", cv);
+
+        final RulesChain chainOfRules = new RulesChain();
+        chainOfRules.addRule(new RemoveUsersWithNoNameRule());
+        chainOfRules.addRule(new RemoveSmsUsersRule());
+        chainOfRules.addRule(new PhoneAndNameRule());
+        chainOfRules.addRule(new PhoneAndLocationRule());
+        chainOfRules.addRule(new RemoveBlackListedEmailsRule());
+        chainOfRules.addRule(new EmailRule());
+
+        Set<SystemConsumerEntity> rez = chainOfRules.process( 1, consumerId, map);
+        System.out.println(rez.stream().map(sce->sce.systemId+"#"+sce.consumerId+" = "+sce.entityId).collect(Collectors.joining("\n")));
     }
 }
