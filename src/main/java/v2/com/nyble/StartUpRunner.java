@@ -20,13 +20,13 @@ import java.util.Set;
 import java.util.UUID;
 
 @Component
-public class StartUpRunner implements CommandLineRunner {
+public class StartUpRunner  {
+    //implements CommandLineRunner
 
     private static Logger logger = LoggerFactory.getLogger(StartUpRunner.class);
 
-    @Override
     @Scheduled(fixedDelay = 3600000)
-    public void run(String... args) throws Exception {
+    public void run() throws Exception{
         ConsumerMapping consumerMapping = createMapping();
         logger.info("end creating map");
         RulesManager rulesManager = new RulesManager(consumerMapping);
