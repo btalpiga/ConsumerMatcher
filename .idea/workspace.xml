@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58baadcf-aee4-4c1b-99c3-377b1d9a2f97" name="Default Changelist" comment="">
+    <list default="true" id="58baadcf-aee4-4c1b-99c3-377b1d9a2f97" name="Default Changelist" comment="bug fix">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ConsumerParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/EmailRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/EmailRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/PhoneAndLocationRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/PhoneAndLocationRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/PhoneAndNameRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/PhoneAndNameRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/RemoveBlackListedEmailsRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/RemoveBlackListedEmailsRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MatchingTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MatchingTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestProcessRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestProcessRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/rest/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/rest/resources/LogLevelRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/rest/resources/Response.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +29,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gMlxrulYSy0aubz6YLlT6RLndw" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -38,26 +41,27 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.nyble.match" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/conf" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/nyble/rest" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/conf" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.nyble.match" />
     </key>
   </component>
   <component name="RunManager" selected="Maven.package">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nyble.main.App" />
+    <configuration name="AppV2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="v2.com.nyble.AppV2" />
       <module name="ConsumerMatcher" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.nyble.main.*" />
+          <option name="PATTERN" value="v2.com.nyble.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -65,40 +69,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MatchingTester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConsumerParserTest.testConsumer1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ConsumerMatcher" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MatchingTester" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MatchingTester.test_matchCase1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ConsumerMatcher" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MatchingTester" />
-      <option name="METHOD_NAME" value="test_matchCase1" />
+      <option name="MAIN_CLASS_NAME" value="ConsumerParserTest" />
+      <option name="METHOD_NAME" value="testConsumer1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MatchingTester.test_matchCase2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConsumerParserTest.test_checkJsonRepDes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ConsumerMatcher" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MatchingTester" />
-      <option name="METHOD_NAME" value="test_matchCase2" />
+      <option name="MAIN_CLASS_NAME" value="ConsumerParserTest" />
+      <option name="METHOD_NAME" value="test_checkJsonRepDes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MatchingTester.test_matchCase3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="V2_Test.initTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ConsumerMatcher" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MatchingTester" />
-      <option name="METHOD_NAME" value="test_matchCase3" />
+      <option name="MAIN_CLASS_NAME" value="V2_Test" />
+      <option name="METHOD_NAME" value="initTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="V2_Test.twoInSameGroup" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ConsumerMatcher" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="V2_Test" />
+      <option name="METHOD_NAME" value="twoInSameGroup" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -130,21 +135,36 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="RemoteDebug" type="Remote">
+      <module name="ConsumerMatcher" />
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="10.100.1.17" />
+      <option name="PORT" value="8001" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="8001" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Application.AppV2" />
+      <item itemvalue="JUnit.ConsumerParserTest.testConsumer1" />
+      <item itemvalue="JUnit.ConsumerParserTest.test_checkJsonRepDes" />
+      <item itemvalue="JUnit.V2_Test.initTest" />
+      <item itemvalue="JUnit.V2_Test.twoInSameGroup" />
       <item itemvalue="Maven.package" />
-      <item itemvalue="JUnit.MatchingTester.test_matchCase1" />
-      <item itemvalue="JUnit.MatchingTester.test_matchCase2" />
-      <item itemvalue="Application.App" />
-      <item itemvalue="JUnit.MatchingTester.test_matchCase3" />
-      <item itemvalue="JUnit.MatchingTester" />
+      <item itemvalue="Remote.RemoteDebug" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MatchingTester" />
-        <item itemvalue="JUnit.MatchingTester.test_matchCase3" />
-        <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.MatchingTester.test_matchCase2" />
-        <item itemvalue="JUnit.MatchingTester.test_matchCase1" />
+        <item itemvalue="Application.AppV2" />
+        <item itemvalue="JUnit.V2_Test.initTest" />
+        <item itemvalue="JUnit.V2_Test.twoInSameGroup" />
+        <item itemvalue="JUnit.ConsumerParserTest.testConsumer1" />
+        <item itemvalue="JUnit.ConsumerParserTest.test_checkJsonRepDes" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +233,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606470723727</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="-">
+      <created>1606584048451</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606584048451</updated>
+    </task>
+    <task id="LOCAL-00008" summary="bug fix">
+      <created>1606906074096</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606906074096</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -223,136 +257,70 @@
     <MESSAGE value="Documentatie" />
     <MESSAGE value="modificare entityId din secventa in UUID" />
     <MESSAGE value="-" />
-    <option name="LAST_COMMIT_MESSAGE" value="-" />
+    <MESSAGE value="bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="553" y="178" width="800" height="677" key="#Auto_Import" timestamp="1597944194903">
-      <screen x="0" y="30" width="1680" height="1050" />
+    <state x="334" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617032088237">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state x="553" y="178" width="800" height="677" key="#Auto_Import/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1597944194903" />
-    <state x="67" y="249" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599042130669">
-      <screen x="67" y="27" width="3773" height="1053" />
+    <state x="334" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.3528.1053@72.27.3528.1053" timestamp="1617032088237" />
+    <state x="2474" y="269" width="374" height="582" key="#com.intellij.ide.util.MemberChooser" timestamp="1617020870266">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state x="1680" y="228" key="#com.intellij.execution.impl.EditConfigurationsDialog/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1598447439546" />
-    <state x="67" y="249" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.3773.1053@67.27.3773.1053" timestamp="1599042130669" />
-    <state x="1166" y="271" width="343" height="577" key="#com.intellij.ide.util.MemberChooser" timestamp="1606398098572">
-      <screen x="0" y="30" width="1680" height="1050" />
+    <state x="2474" y="269" width="374" height="582" key="#com.intellij.ide.util.MemberChooser/72.27.3528.1053@72.27.3528.1053" timestamp="1617020870266" />
+    <state x="567" y="382" width="494" height="297" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1617009065692">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state x="1166" y="271" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606398098572" />
-    <state x="3013" y="248" width="343" height="577" key="#com.intellij.ide.util.MemberChooser/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606066637740" />
-    <state x="2686" y="269" key="#com.intellij.ide.util.MemberChooser/67.27.3773.1053@67.27.3773.1053" timestamp="1601209795243" />
-    <state x="460" y="220" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598027680485">
-      <screen x="0" y="30" width="1680" height="1050" />
+    <state x="567" y="382" width="494" height="297" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/72.27.3528.1053@72.27.3528.1053" timestamp="1617009065692" />
+    <state width="531" height="466" key="DebuggerActiveHint" timestamp="1617037806204">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state x="460" y="220" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1598027680485" />
-    <state x="1062" y="175" width="556" height="582" key="#xdebugger.evaluate" timestamp="1602060703693">
-      <screen x="67" y="27" width="3773" height="1053" />
+    <state width="531" height="466" key="DebuggerActiveHint/72.27.3528.1053@72.27.3528.1053" timestamp="1617037806204" />
+    <state width="1874" height="293" key="GridCell.Tab.0.bottom" timestamp="1617091560464">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state x="443" y="178" width="556" height="582" key="#xdebugger.evaluate/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1598024406389" />
-    <state x="1062" y="175" key="#xdebugger.evaluate/67.27.3773.1053@67.27.3773.1053" timestamp="1602060703693" />
-    <state x="919" y="131" width="761" height="805" key="CommitChangelistDialog2" timestamp="1606470723670">
-      <screen x="0" y="30" width="1680" height="1050" />
+    <state width="1874" height="293" key="GridCell.Tab.0.bottom/72.27.3528.1053@72.27.3528.1053" timestamp="1617091560464" />
+    <state width="1874" height="293" key="GridCell.Tab.0.center" timestamp="1617091560462">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state x="919" y="131" width="761" height="805" key="CommitChangelistDialog2/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606470723670" />
-    <state x="2169" y="128" width="1019" height="807" key="CommitChangelistDialog2/67.27.3773.1053@67.27.3773.1053" timestamp="1604321977096" />
-    <state width="622" height="466" key="DebuggerActiveHint" timestamp="1606472400041">
-      <screen x="0" y="30" width="1680" height="1050" />
+    <state width="1874" height="293" key="GridCell.Tab.0.center/72.27.3528.1053@72.27.3528.1053" timestamp="1617091560462" />
+    <state width="1874" height="293" key="GridCell.Tab.0.left" timestamp="1617091560460">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state width="622" height="466" key="DebuggerActiveHint/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606472400041" />
-    <state width="711" height="480" key="DebuggerActiveHint/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606073244336" />
-    <state width="1397" height="468" key="DebuggerActiveHint/67.27.3773.1053@67.27.3773.1053" timestamp="1604158105375" />
-    <state x="770" y="305" width="424" height="567" key="FileChooserDialogImpl" timestamp="1604154930712">
-      <screen x="67" y="27" width="3773" height="1053" />
+    <state width="1874" height="293" key="GridCell.Tab.0.left/72.27.3528.1053@72.27.3528.1053" timestamp="1617091560460" />
+    <state width="1874" height="293" key="GridCell.Tab.0.right" timestamp="1617091560463">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state x="770" y="305" width="424" height="567" key="FileChooserDialogImpl/67.27.3773.1053@67.27.3773.1053" timestamp="1604154930712" />
-    <state width="1698" height="237" key="GridCell.Tab.0.bottom" timestamp="1606584038257">
-      <screen x="0" y="30" width="1680" height="1050" />
+    <state width="1874" height="293" key="GridCell.Tab.0.right/72.27.3528.1053@72.27.3528.1053" timestamp="1617091560463" />
+    <state width="1562" height="266" key="GridCell.Tab.1.bottom" timestamp="1617037898638">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state width="1406" height="269" key="GridCell.Tab.0.bottom/0.27.3600.1053@0.27.3600.1053" timestamp="1602421736181" />
-    <state width="1698" height="237" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606584038257" />
-    <state width="1807" height="337" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606082807313" />
-    <state width="1406" height="266" key="GridCell.Tab.0.bottom/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603708" />
-    <state width="1698" height="237" key="GridCell.Tab.0.center" timestamp="1606584038256">
-      <screen x="0" y="30" width="1680" height="1050" />
+    <state width="1562" height="266" key="GridCell.Tab.1.bottom/72.27.3528.1053@72.27.3528.1053" timestamp="1617037898638" />
+    <state width="1562" height="266" key="GridCell.Tab.1.center" timestamp="1617037898638">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state width="1406" height="269" key="GridCell.Tab.0.center/0.27.3600.1053@0.27.3600.1053" timestamp="1602421736180" />
-    <state width="1698" height="237" key="GridCell.Tab.0.center/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606584038256" />
-    <state width="1807" height="337" key="GridCell.Tab.0.center/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606082807313" />
-    <state width="1406" height="266" key="GridCell.Tab.0.center/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603707" />
-    <state width="1698" height="237" key="GridCell.Tab.0.left" timestamp="1606584038256">
-      <screen x="0" y="30" width="1680" height="1050" />
+    <state width="1562" height="266" key="GridCell.Tab.1.center/72.27.3528.1053@72.27.3528.1053" timestamp="1617037898638" />
+    <state width="1562" height="266" key="GridCell.Tab.1.left" timestamp="1617037898637">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state width="1406" height="269" key="GridCell.Tab.0.left/0.27.3600.1053@0.27.3600.1053" timestamp="1602421736179" />
-    <state width="1698" height="237" key="GridCell.Tab.0.left/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606584038256" />
-    <state width="1807" height="337" key="GridCell.Tab.0.left/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606082807313" />
-    <state width="1406" height="266" key="GridCell.Tab.0.left/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603707" />
-    <state width="1698" height="237" key="GridCell.Tab.0.right" timestamp="1606584038256">
-      <screen x="0" y="30" width="1680" height="1050" />
+    <state width="1562" height="266" key="GridCell.Tab.1.left/72.27.3528.1053@72.27.3528.1053" timestamp="1617037898637" />
+    <state width="1562" height="266" key="GridCell.Tab.1.right" timestamp="1617037898638">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state width="1406" height="269" key="GridCell.Tab.0.right/0.27.3600.1053@0.27.3600.1053" timestamp="1602421736180" />
-    <state width="1698" height="237" key="GridCell.Tab.0.right/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606584038256" />
-    <state width="1807" height="337" key="GridCell.Tab.0.right/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606082807313" />
-    <state width="1406" height="266" key="GridCell.Tab.0.right/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603708" />
-    <state width="1698" height="266" key="GridCell.Tab.1.bottom" timestamp="1606583465857">
-      <screen x="0" y="30" width="1680" height="1050" />
+    <state width="1562" height="266" key="GridCell.Tab.1.right/72.27.3528.1053@72.27.3528.1053" timestamp="1617037898638" />
+    <state x="1612" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1616661946966">
+      <screen x="72" y="27" width="3768" height="1053" />
     </state>
-    <state width="1698" height="266" key="GridCell.Tab.1.bottom/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606583465857" />
-    <state width="1807" height="334" key="GridCell.Tab.1.bottom/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606074641436" />
-    <state width="1406" height="266" key="GridCell.Tab.1.bottom/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603710" />
-    <state width="1698" height="266" key="GridCell.Tab.1.center" timestamp="1606583465857">
-      <screen x="0" y="30" width="1680" height="1050" />
+    <state x="1612" y="381" key="com.intellij.ide.util.TipDialog/72.27.3768.1053@72.27.3768.1053" timestamp="1616661946966" />
+    <state x="540" y="253" key="run.anything.popup" timestamp="1617034910895">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state width="1698" height="266" key="GridCell.Tab.1.center/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606583465857" />
-    <state width="1807" height="334" key="GridCell.Tab.1.center/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606074641436" />
-    <state width="1406" height="266" key="GridCell.Tab.1.center/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603709" />
-    <state width="1698" height="266" key="GridCell.Tab.1.left" timestamp="1606583465857">
-      <screen x="0" y="30" width="1680" height="1050" />
+    <state x="540" y="253" key="run.anything.popup/72.27.3528.1053@72.27.3528.1053" timestamp="1617034910895" />
+    <state x="2329" y="303" width="672" height="678" key="search.everywhere.popup" timestamp="1616748695688">
+      <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state width="1698" height="266" key="GridCell.Tab.1.left/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606583465857" />
-    <state width="1807" height="334" key="GridCell.Tab.1.left/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606074641436" />
-    <state width="1406" height="266" key="GridCell.Tab.1.left/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603709" />
-    <state width="1698" height="266" key="GridCell.Tab.1.right" timestamp="1606583465857">
-      <screen x="0" y="30" width="1680" height="1050" />
-    </state>
-    <state width="1698" height="266" key="GridCell.Tab.1.right/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606583465857" />
-    <state width="1807" height="334" key="GridCell.Tab.1.right/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606074641436" />
-    <state width="1406" height="266" key="GridCell.Tab.1.right/67.27.3773.1053@67.27.3773.1053" timestamp="1604309603709" />
-    <state x="572" y="287" width="819" height="602" key="NewModule_or_Project.wizard" timestamp="1601885818318">
-      <screen x="67" y="27" width="3773" height="1053" />
-    </state>
-    <state x="572" y="287" width="819" height="602" key="NewModule_or_Project.wizard/67.27.3773.1053@67.27.3773.1053" timestamp="1601885818318" />
-    <state x="985" y="269" width="516" height="527" key="Vcs.Push.Dialog.v2" timestamp="1606470735703">
-      <screen x="0" y="30" width="1680" height="1050" />
-    </state>
-    <state x="985" y="269" width="516" height="527" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606470735703" />
-    <state x="2279" y="267" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.3773.1053@67.27.3773.1053" timestamp="1604321990915" />
-    <state x="1635" y="387" key="com.intellij.ide.util.TipDialog" timestamp="1602068538342">
-      <screen x="67" y="27" width="3773" height="1053" />
-    </state>
-    <state x="1635" y="387" key="com.intellij.ide.util.TipDialog/67.27.3773.1053@67.27.3773.1053" timestamp="1602068538342" />
-    <state x="281" y="208" width="880" height="602" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1598021577912">
-      <screen x="0" y="30" width="1680" height="1050" />
-    </state>
-    <state x="281" y="208" width="880" height="602" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1598021577912" />
-    <state x="970" y="239" width="710" height="538" key="find.popup" timestamp="1606467673843">
-      <screen x="0" y="30" width="1680" height="1050" />
-    </state>
-    <state x="970" y="239" width="710" height="538" key="find.popup/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1606467673843" />
-    <state x="2788" y="215" width="812" height="554" key="find.popup/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1598544299988" />
-    <state x="2244" y="237" width="1596" height="541" key="find.popup/67.27.3773.1053@67.27.3773.1053" timestamp="1604152156272" />
-    <state x="67" y="214" width="1372" height="603" key="new project wizard" timestamp="1602073926753">
-      <screen x="67" y="27" width="3773" height="1053" />
-    </state>
-    <state x="1680" y="192" width="1372" height="603" key="new project wizard/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1598545619704" />
-    <state x="67" y="214" key="new project wizard/67.27.3773.1053@67.27.3773.1053" timestamp="1602073926753" />
-    <state x="2337" y="253" key="run.anything.popup" timestamp="1606068776504">
-      <screen x="1680" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2337" y="253" key="run.anything.popup/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1606068776504" />
-    <state x="771" y="306" width="672" height="678" key="search.everywhere.popup" timestamp="1602058707358">
-      <screen x="67" y="27" width="3773" height="1053" />
-    </state>
-    <state x="771" y="306" width="672" height="678" key="search.everywhere.popup/67.27.3773.1053@67.27.3773.1053" timestamp="1602058707358" />
+    <state x="2329" y="303" width="672" height="678" key="search.everywhere.popup/72.27.3528.1053@72.27.3528.1053" timestamp="1616748695688" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -374,8 +342,54 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/MatchingTester.java</url>
-          <line>39</line>
+          <line>40</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/MatchingTester.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ConsumerParserTest.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/nyble/NybleKafkaModels/1.0-SNAPSHOT/NybleKafkaModels-1.0-SNAPSHOT.jar!/com/nyble/topics/TopicObjectsFactory.class</url>
+          <line>46</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/v2/com/nyble/manager/RulesManager.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <condition expression="consumerId == 11777530 || consumerId == 6941" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/main/java/v2/com/nyble/StartUpRunner.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/V2_Test.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/v2/com/nyble/manager/RulesManager.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/v2/com/nyble/manager/RuleManager.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/v2/com/nyble/StartUpRunner.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
