@@ -48,7 +48,7 @@ public class StartUpRunner  {
                 Utils.updateConsumerAttribute(systemId, consumerId, "entityId", uuid, now);
             }
             if(group.size() > 1){
-                logger.info(uuid+": "+group);
+                logger.debug(uuid+": "+group);
             }
         });
 
@@ -63,7 +63,7 @@ public class StartUpRunner  {
             while(rs.next()){
                 cm.mapConsumer(rs.getString(1));
                 if(cm.getSize()%10000 == 0){
-                    logger.info("Mapped {} consumers", cm.getSize());
+                    logger.debug("Mapped {} consumers", cm.getSize());
                 }
             }
         }
