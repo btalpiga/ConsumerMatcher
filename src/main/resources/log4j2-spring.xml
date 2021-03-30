@@ -22,7 +22,7 @@
             <Field name="className" pattern="%C" />
             <Field name="server" pattern="%host" />
 
-            <Field name="application" literal="ConsumerAttributesSinkToTable"/>
+            <Field name="application" literal="ConsumerMatcher"/>
             <Field name="logger" literal="log4j2"/>
         </Gelf>
     </Appenders>
