@@ -5,10 +5,15 @@ import com.nyble.topics.Names;
 import com.nyble.topics.consumer.ConsumerKey;
 import com.nyble.topics.consumerAttributes.ConsumerAttributesKey;
 import com.nyble.topics.consumerAttributes.ConsumerAttributesValue;
+import com.nyble.util.DBUtil;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
@@ -64,5 +69,27 @@ public class Utils {
         ProducerRecord<String, String> consumerMessage = new ProducerRecord<>(Names.CONSUMER_ATTRIBUTES_TOPIC,
                 cak.toJson(), cav.toJson());
         producerManager.getProducer().send(consumerMessage);
+    }
+
+    public static void runSqlFromTerminal(String dataSourceName, String command) throws IOException, InterruptedException {
+        ProcessBuilder pb = new ProcessBuilder("/bin/bash", "-c", command);
+        pb.environment().put("PGPASSWORD", DBUtil.getInstance().getDataSourceProperties(dataSourceName).get("PASSWORD"));
+        Process p = pb.start();
+        String output = loadStream(p.getInputStream());
+        String error = loadStream(p.getErrorStream());
+        int rc = p.waitFor();
+        if(! (rc == 0 && (error == null || error.trim().isEmpty())) ){
+            throw new RuntimeException("Error loading groups to DB, code = "+rc+" message = "+error);
+        }
+    }
+
+    static String loadStream(InputStream s) throws IOException {
+        try(BufferedReader br = new BufferedReader(new InputStreamReader(s))){
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null)
+                sb.append(line).append("\n");
+            return sb.toString();
+        }
     }
 }
