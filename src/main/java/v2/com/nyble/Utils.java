@@ -9,6 +9,8 @@ import com.nyble.util.DBUtil;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -26,6 +28,7 @@ public class Utils {
     static Properties producerProperties = new Properties();
     static ProducerManager producerManager;
     static ReentrantLock lock = new ReentrantLock();
+    final static Logger logger = LoggerFactory.getLogger(Utils.class);
 
     private static void initProps(){
         producerProperties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, KAFKA_CLUSTER_BOOTSTRAP_SERVERS);
@@ -78,7 +81,17 @@ public class Utils {
         String output = loadStream(p.getInputStream());
         String error = loadStream(p.getErrorStream());
         int rc = p.waitFor();
-        if(! (rc == 0 && (error == null || error.trim().isEmpty())) ){
+        if(!output.isEmpty()){
+            logger.info(output);
+        }
+        if(!error.isEmpty()){
+            if(rc == 0){
+                logger.warn(error);
+            }else{
+                throw new RuntimeException("Error loading groups to DB, code = "+rc+" message = "+error);
+            }
+        }
+        if( rc!=0 ){
             throw new RuntimeException("Error loading groups to DB, code = "+rc+" message = "+error);
         }
     }
