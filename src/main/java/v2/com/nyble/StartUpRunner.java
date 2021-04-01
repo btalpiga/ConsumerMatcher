@@ -56,7 +56,7 @@ public class StartUpRunner  {
         logger.info("Creating consumer groups file");
         final String filePath = createConsumerGroupsFile(groups);
         final String dataSource = "datawarehouse";
-        final String query = "select system_id, consumer_id, group_key from tmp_consumer_dedupe_groups t\n" +
+        final String query = "select t.system_id, t.consumer_id, t.group_key from tmp_consumer_dedupe_groups t\n" +
                 "left join consumers_unique_entity_criterias cuec \n" +
                 "on t.system_id = cuec.system_id and t.consumer_id = cuec.consumer_id and t.group_key = cuec.entity_id \n" +
                 "where cuec.consumer_id is null";
