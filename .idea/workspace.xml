@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58baadcf-aee4-4c1b-99c3-377b1d9a2f97" name="Default Changelist" comment="bug fix">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ConsumerParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/rest/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/rest/resources/LogLevelRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/rest/resources/Response.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/main/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/main/RecordProcessorImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/Matcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/SystemConsumerEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/EmailRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/MatchingRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/PhoneAndLocationRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/PhoneAndNameRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/RemoveBlackListedEmailsRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/RemoveSmsUsersRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/RemoveUsersWithNoNameRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nyble/match/rules/RulesChain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/v2/com/nyble/StartUpRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/v2/com/nyble/StartUpRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MatchingTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MatchingTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +255,56 @@
       <option name="project" value="LOCAL" />
       <updated>1606906074096</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Improved way of deduplication">
+      <created>1617091619419</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1617091619419</updated>
+    </task>
+    <task id="LOCAL-00010" summary="-">
+      <created>1617097249511</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1617097249511</updated>
+    </task>
+    <task id="LOCAL-00011" summary="change some log levels">
+      <created>1617097327226</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1617097327226</updated>
+    </task>
+    <task id="LOCAL-00012" summary="logging">
+      <created>1617097527382</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1617097527382</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Change update mode: delta VS full">
+      <created>1617268629980</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1617268629980</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Change error handling when working with bash commands">
+      <created>1617269251419</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1617269251419</updated>
+    </task>
+    <task id="LOCAL-00015" summary="-">
+      <created>1617269942564</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1617269942564</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -256,9 +313,14 @@
     <MESSAGE value="Adaugare server web" />
     <MESSAGE value="Documentatie" />
     <MESSAGE value="modificare entityId din secventa in UUID" />
-    <MESSAGE value="-" />
     <MESSAGE value="bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
+    <MESSAGE value="Improved way of deduplication" />
+    <MESSAGE value="change some log levels" />
+    <MESSAGE value="logging" />
+    <MESSAGE value="Change update mode: delta VS full" />
+    <MESSAGE value="Change error handling when working with bash commands" />
+    <MESSAGE value="-" />
+    <option name="LAST_COMMIT_MESSAGE" value="-" />
   </component>
   <component name="WindowStateProjectService">
     <state x="334" y="213" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617032088237">
@@ -273,46 +335,66 @@
       <screen x="72" y="27" width="3528" height="1053" />
     </state>
     <state x="567" y="382" width="494" height="297" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/72.27.3528.1053@72.27.3528.1053" timestamp="1617009065692" />
+    <state x="2571" y="127" width="1019" height="814" key="CommitChangelistDialog2" timestamp="1617269942387">
+      <screen x="1680" y="0" width="1920" height="1080" />
+    </state>
+    <state x="888" y="153" width="792" height="812" key="CommitChangelistDialog2/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1617268629865" />
+    <state x="2571" y="127" width="1019" height="814" key="CommitChangelistDialog2/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1617269942387" />
+    <state x="2105" y="150" width="1059" height="814" key="CommitChangelistDialog2/72.27.3528.1053@72.27.3528.1053" timestamp="1617097527285" />
     <state width="531" height="466" key="DebuggerActiveHint" timestamp="1617037806204">
       <screen x="72" y="27" width="3528" height="1053" />
     </state>
     <state width="531" height="466" key="DebuggerActiveHint/72.27.3528.1053@72.27.3528.1053" timestamp="1617037806204" />
-    <state width="1874" height="293" key="GridCell.Tab.0.bottom" timestamp="1617091560464">
+    <state width="1562" height="266" key="GridCell.Tab.0.bottom" timestamp="1622742834370">
+      <screen x="0" y="30" width="1680" height="1050" />
+    </state>
+    <state width="1562" height="266" key="GridCell.Tab.0.bottom/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1622742834370" />
+    <state width="1562" height="266" key="GridCell.Tab.0.bottom/72.27.3528.1053@72.27.3528.1053" timestamp="1617098897599" />
+    <state width="1562" height="266" key="GridCell.Tab.0.center" timestamp="1622742834369">
+      <screen x="0" y="30" width="1680" height="1050" />
+    </state>
+    <state width="1562" height="266" key="GridCell.Tab.0.center/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1622742834369" />
+    <state width="1562" height="266" key="GridCell.Tab.0.center/72.27.3528.1053@72.27.3528.1053" timestamp="1617098897596" />
+    <state width="1562" height="266" key="GridCell.Tab.0.left" timestamp="1622742834369">
+      <screen x="0" y="30" width="1680" height="1050" />
+    </state>
+    <state width="1562" height="266" key="GridCell.Tab.0.left/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1622742834369" />
+    <state width="1562" height="266" key="GridCell.Tab.0.left/72.27.3528.1053@72.27.3528.1053" timestamp="1617098897595" />
+    <state width="1562" height="266" key="GridCell.Tab.0.right" timestamp="1622742834369">
+      <screen x="0" y="30" width="1680" height="1050" />
+    </state>
+    <state width="1562" height="266" key="GridCell.Tab.0.right/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1622742834369" />
+    <state width="1562" height="266" key="GridCell.Tab.0.right/72.27.3528.1053@72.27.3528.1053" timestamp="1617098897597" />
+    <state width="1562" height="266" key="GridCell.Tab.1.bottom" timestamp="1617098897604">
       <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state width="1874" height="293" key="GridCell.Tab.0.bottom/72.27.3528.1053@72.27.3528.1053" timestamp="1617091560464" />
-    <state width="1874" height="293" key="GridCell.Tab.0.center" timestamp="1617091560462">
+    <state width="1562" height="266" key="GridCell.Tab.1.bottom/72.27.3528.1053@72.27.3528.1053" timestamp="1617098897604" />
+    <state width="1562" height="266" key="GridCell.Tab.1.center" timestamp="1617098897602">
       <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state width="1874" height="293" key="GridCell.Tab.0.center/72.27.3528.1053@72.27.3528.1053" timestamp="1617091560462" />
-    <state width="1874" height="293" key="GridCell.Tab.0.left" timestamp="1617091560460">
+    <state width="1562" height="266" key="GridCell.Tab.1.center/72.27.3528.1053@72.27.3528.1053" timestamp="1617098897602" />
+    <state width="1562" height="266" key="GridCell.Tab.1.left" timestamp="1617098897600">
       <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state width="1874" height="293" key="GridCell.Tab.0.left/72.27.3528.1053@72.27.3528.1053" timestamp="1617091560460" />
-    <state width="1874" height="293" key="GridCell.Tab.0.right" timestamp="1617091560463">
+    <state width="1562" height="266" key="GridCell.Tab.1.left/72.27.3528.1053@72.27.3528.1053" timestamp="1617098897600" />
+    <state width="1562" height="266" key="GridCell.Tab.1.right" timestamp="1617098897603">
       <screen x="72" y="27" width="3528" height="1053" />
     </state>
-    <state width="1874" height="293" key="GridCell.Tab.0.right/72.27.3528.1053@72.27.3528.1053" timestamp="1617091560463" />
-    <state width="1562" height="266" key="GridCell.Tab.1.bottom" timestamp="1617037898638">
-      <screen x="72" y="27" width="3528" height="1053" />
+    <state width="1562" height="266" key="GridCell.Tab.1.right/72.27.3528.1053@72.27.3528.1053" timestamp="1617098897603" />
+    <state x="2790" y="268" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1617269952583">
+      <screen x="1680" y="0" width="1920" height="1080" />
     </state>
-    <state width="1562" height="266" key="GridCell.Tab.1.bottom/72.27.3528.1053@72.27.3528.1053" timestamp="1617037898638" />
-    <state width="1562" height="266" key="GridCell.Tab.1.center" timestamp="1617037898638">
-      <screen x="72" y="27" width="3528" height="1053" />
-    </state>
-    <state width="1562" height="266" key="GridCell.Tab.1.center/72.27.3528.1053@72.27.3528.1053" timestamp="1617037898638" />
-    <state width="1562" height="266" key="GridCell.Tab.1.left" timestamp="1617037898637">
-      <screen x="72" y="27" width="3528" height="1053" />
-    </state>
-    <state width="1562" height="266" key="GridCell.Tab.1.left/72.27.3528.1053@72.27.3528.1053" timestamp="1617037898637" />
-    <state width="1562" height="266" key="GridCell.Tab.1.right" timestamp="1617037898638">
-      <screen x="72" y="27" width="3528" height="1053" />
-    </state>
-    <state width="1562" height="266" key="GridCell.Tab.1.right/72.27.3528.1053@72.27.3528.1053" timestamp="1617037898638" />
+    <state x="1030" y="291" width="516" height="534" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1617268652388" />
+    <state x="2790" y="268" width="800" height="535" key="Vcs.Push.Dialog.v2/1680.0.1920.1080/0.30.1680.1050@1680.0.1920.1080" timestamp="1617269952583" />
+    <state x="2235" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.3528.1053@72.27.3528.1053" timestamp="1617097537796" />
     <state x="1612" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1616661946966">
       <screen x="72" y="27" width="3768" height="1053" />
     </state>
     <state x="1612" y="381" key="com.intellij.ide.util.TipDialog/72.27.3768.1053@72.27.3768.1053" timestamp="1616661946966" />
+    <state x="521" y="277" width="710" height="538" key="find.popup" timestamp="1622742653048">
+      <screen x="0" y="30" width="1680" height="1050" />
+    </state>
+    <state x="521" y="277" width="710" height="538" key="find.popup/1680.0.1920.1080/0.30.1680.1050@0.30.1680.1050" timestamp="1622742653047" />
     <state x="540" y="253" key="run.anything.popup" timestamp="1617034910895">
       <screen x="72" y="27" width="3528" height="1053" />
     </state>
@@ -342,12 +424,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/MatchingTester.java</url>
-          <line>40</line>
+          <line>38</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/MatchingTester.java</url>
-          <line>129</line>
+          <line>127</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -366,12 +448,6 @@
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <condition expression="consumerId == 11777530 || consumerId == 6941" language="JAVA" />
-          <url>file://$PROJECT_DIR$/src/main/java/v2/com/nyble/StartUpRunner.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/V2_Test.java</url>
           <line>49</line>
           <option name="timeStamp" value="38" />
@@ -385,11 +461,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/v2/com/nyble/manager/RuleManager.java</url>
           <line>21</line>
           <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/v2/com/nyble/StartUpRunner.java</url>
-          <line>81</line>
-          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

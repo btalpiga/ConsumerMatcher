@@ -48,6 +48,10 @@ public class StartUpRunner  {
             Utils.updateConsumerAttribute(systemId, consumerId, "entityId", key, now);
         });
 
+        consumerMapping = null;
+        rulesManager = null;
+        groups = null;
+        consumersToUpdate = null;
         logger.info("End consumer matcher");
     }
 
