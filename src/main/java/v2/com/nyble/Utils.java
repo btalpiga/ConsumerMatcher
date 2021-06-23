@@ -9,8 +9,10 @@ import com.nyble.util.DBUtil;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -28,7 +30,7 @@ public class Utils {
     static Properties producerProperties = new Properties();
     static ProducerManager producerManager;
     static ReentrantLock lock = new ReentrantLock();
-    final static Logger logger = LoggerFactory.getLogger(Utils.class);
+    final static Logger logger = LogManager.getLogger(Utils.class);
 
     private static void initProps(){
         producerProperties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, KAFKA_CLUSTER_BOOTSTRAP_SERVERS);

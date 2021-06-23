@@ -2,11 +2,13 @@ package v2.com.nyble;
 
 import com.nyble.util.DBUtil;
 import com.nyble.util.Pair;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+//import org.springframework.boot.CommandLineRunner;
+//import org.springframework.scheduling.annotation.Scheduled;
+//import org.springframework.stereotype.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 import v2.com.nyble.dataStructures.ConsumerFeatures;
 import v2.com.nyble.dataStructures.ConsumerMapping;
 import v2.com.nyble.manager.RuleManager;
@@ -19,13 +21,13 @@ import java.io.*;
 import java.sql.*;
 import java.util.*;
 
-@Component
+//@Component
 public class StartUpRunner  {
     //implements CommandLineRunner
 
     private static Logger logger = LoggerFactory.getLogger(StartUpRunner.class);
 
-    @Scheduled(fixedDelay = 3600000)
+//    @Scheduled(fixedDelay = 3600000)
     public void run() throws Exception{
         ConsumerMapping consumerMapping = createMapping();
         logger.info("end creating map");
